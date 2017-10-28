@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src 'self' blob: ; img-src * 'self' data: https:" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+      
+    </style>
+        <title>Photography</title>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+<h1 id="orientation">This device is in portrait mode</h1>
+ <h2>Or</h2>
+       
+        <img style="display:none;width:400px;height:400px;" id="myImage" src="" />
+      <a href="#page2"  ><button>Print</button></a>
+       
+
+        </div>
+
+    	<div data-role="page" id="page2">
+    <form name="myForm" onsubmit="return foo()">
+	<input name="name" placeholder="What is your name?" class="name" required />		
+	<input name="emailaddress" placeholder="What is your email?" class="email" type="email" required />
+
+    <textarea rows="4" cols="50" name="subject" placeholder="Please enter your Address" class="message" required></textarea>
+    <input name="contact" placeholder="What is your contact no.?" class="email" type="text" required />
+    <input name="copies" placeholder="Number of copies?" class="email" type="text" required />
+    <select name="size" class="email">
+  <option value="20">32*40</option>
+  <option value="10">8*10</option>
+ 
+</select>
+ <input name="date" placeholder="Date of delivery" class="email" type="text" required />
+   <input type="button" onClick="foo()" value="submit" />
+   <script> 
+   	function foo(){
+   	var x = document.forms["myForm"]["copies"].value;
+     var y = document.forms["myForm"]["size"].value;
+     var z = x*y;
+     var r = confirm('Total amount for ' +x+ ' copies is '+z+'$');
+     if(r == true){
+     alert('print starting');
+     window.location.assign('index.html')
+ }else{
+ 	
+     window.location.assign('index.html')
+ }
+ }
+   </script>
+</form>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
